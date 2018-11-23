@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import AppCostumers from './components/AppCostumers.vue'
 import AppProducts from './components/AppProducts'
+import FormForCostumers from './components/FormForCostumers'
 
 Vue.config.productionTip = false
 
@@ -13,6 +14,7 @@ const routes = [
   {path: '/', redirect: '/costumers' },
   {path: '/costumers', component: AppCostumers},
   {path: '/products', component: AppProducts},
+  {path: '/create-costumer', component: FormForCostumers},
 
 ]
 
