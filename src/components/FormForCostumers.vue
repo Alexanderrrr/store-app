@@ -26,6 +26,7 @@ export default {
     addCostumer(){
       CostumerService.add(this.newCostumer)
       this.newCostumer = {}
+      this.$router.push({path: '/costumers'})
     }
   }
 }

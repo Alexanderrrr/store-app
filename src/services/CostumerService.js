@@ -37,6 +37,10 @@ class CostumerService {
     costumers.push(costumer);
     nextId++
   }
+
+  getUserById(id){
+    return costumers.find(costumer => costumer.id == id)
+  }
 }
 
 const costumerService = new CostumerService();

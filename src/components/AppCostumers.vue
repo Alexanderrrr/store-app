@@ -7,12 +7,16 @@
         <th>Name</th>
         <th>email</th>
         <th>Remove button</th>
+        <th>Latest Purchases</th>
       </thead>
       <tbody>
         <tr v-for="(costumer, index) in costumers" :key="index">
           <td>{{ costumer.id }}</td>
           <td>{{ costumer.fullName }}</td>
           <td>{{ costumer.email }}</td>
+          <td>
+            <router-link :to="{ name: 'costumer-details', params: {id: costumer.id}}">Latest Purchases</router-link>
+          </td>
           <td>
             <button class="btn btn-danger" @click='removeCostumer(costumer)'>Remove</button>
           </td>
