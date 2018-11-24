@@ -1,22 +1,28 @@
 const products = [
   {
-    name: 'htp'
+    name: 'htp',
+    amount: 0,
   },
 
   {
-    name: 'lenovo'
+    name: 'lenovo',
+    amount: 0,
   },
   {
-    name: 'siemens'
+    name: 'siemens',
+    amount: 2,
   },
   {
-    name: 'hp'
+    name: 'hp',
+    amount: 0,
   },
   {
-    name: 'genius'
+    name: 'genius',
+    amount: 0,
   },
   {
-    name: 'motor'
+    name: 'motor',
+    amount: 0,
   },
 ];
 
@@ -25,6 +31,24 @@ class ProductService {
 
   list(){
     return products;
+  }
+
+  changingAmount(name, value){
+    let product = products.filter(product => product.name == name)
+    product.map(pr => {
+      if (pr.amount < 0) {
+        pr.amount = 0;
+        return alert("Product " + pr.name + " amount is 0")
+
+      }
+      else if (value === "add") {
+        pr.amount++
+      }
+      else if (value === "minus" ) {
+          pr.amount--
+      }
+
+    });
   }
 }
 
